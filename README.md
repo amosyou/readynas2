@@ -3,6 +3,7 @@
 ## Prerequisites
 
 ### fuse-ext2 Installation
+Full guide [here](https://github.com/alperakcan/fuse-ext2).
 ```
 ubuntu@ubuntu:~/Downloads/fuse-ext2-master$ ls
 aclocal.m4  compile       config.sub    fuse-ext2        Makefile.am
@@ -21,7 +22,7 @@ $ sudo make install
 ```
 sudo apt-get install gawk g++ c++
 ```
-Otherwise, such errors would occur.
+Otherwise, [such errors](https://github.com/amosyou/readynas2/blob/main/fuse-ext2.md) would occur.
 
 
 ## Disk Probe
@@ -29,13 +30,16 @@ Otherwise, such errors would occur.
 ubuntu@ubuntu:~$ sudo vgscan
   WARNING: PV /dev/sda5 in VG c is using an old PV header, modify the VG to update.
   Found volume group "c" using metadata type lvm2
+
 ubuntu@ubuntu:~$ sudo vgchange -ay c
   WARNING: PV /dev/sda5 in VG c is using an old PV header, modify the VG to update.
   1 logical volume(s) in volume group "c" now active
+
 ubuntu@ubuntu:~$ sudo lvs
   WARNING: PV /dev/sda5 in VG c is using an old PV header, modify the VG to update.
   LV   VG Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
   c    c  -wi-a----- 929.09g                                                    
+
 ubuntu@ubuntu:~$ sudo lvdisplay /dev/c
   WARNING: PV /dev/sda5 in VG c is using an old PV header, modify the VG to update.
   --- Logical volume ---
@@ -54,7 +58,6 @@ ubuntu@ubuntu:~$ sudo lvdisplay /dev/c
   Read ahead sectors     auto
   - currently set to     256
   Block device           253:0
-
 ```
 
 
@@ -80,3 +83,5 @@ $ sudo fusermount -u /media/readynas2
 ## References
 
 [1] http://technostuff.blogspot.com/2012/06/how-to-mount-disk-used-by-readynas.html
+
+[2] https://github.com/alperakcan/fuse-ext2
