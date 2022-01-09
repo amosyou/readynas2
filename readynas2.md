@@ -62,7 +62,7 @@ ubuntu@ubuntu:~$ sudo lvdisplay /dev/c
 
 ### Create local directory
 ```
-$ mkdir /media/readynas2
+$ sudo mkdir /media/readynas2
 ```
 
 ### Mount Volume
@@ -73,7 +73,7 @@ $ sudo fuse-ext2 -o sync_read,allow_other,rw+ /dev/c/c /media/readynas2
 
 ## Unmounting Drive
 ```
-$ fusermount -u /media/readynas2
+$ sudo fusermount -u /media/readynas2
 ```
 
 
